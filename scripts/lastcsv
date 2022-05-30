@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DOWNLOAD_FOLDER="/mnt/c/Users/gundejor/downloads"
+
+# Go to download folder
+cd $DOWNLOAD_FOLDER
+# List the all in DOWNLOAD_FOLDER (without . and ..), sort by modification time, in reverse order
+ls -Art | tail -n 1 | while read file
+do
+	echo "$file"
+	rich --csv "$file"
+done
